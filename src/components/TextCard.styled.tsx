@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-export const TextCard = styled.p`
+export const Text = styled.p`
    font-size: 12px;
    padding-left: 10px;
 

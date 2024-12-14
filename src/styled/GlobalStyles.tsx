@@ -5,18 +5,13 @@ export const GlobalSlyles = createGlobalStyle`
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
-
-   * {
-      padding: 0;
-      margin: 0;
-      border: 0;
-   }
    *,
-   *:betore,
-   *:after {
+   *::before,
+   *::after {
+		padding: 0;
+      margin: 0;
       -moz-box-sizing: border-box;
       -webkit-box-sizing: border-box;
-
       box-sizing: border-box;
    }
    :focus,

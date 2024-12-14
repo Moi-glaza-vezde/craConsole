@@ -1,33 +1,41 @@
 import React from 'react';
 import styled from 'styled-components';
-import imgCard from '../assets/image/imgCard.jpg';
-import { StyledCardWrapper } from '../components/StyledCardWrapper.styled';
-import { ImageCard } from '../components/ImageCard.styled';
-import { TitleCard } from '../components/TitleCard.styled';
-import { TextCard } from '../components/TextCard.styled';
-import { ButtonCard } from '../components/ButtonCard.styled';
-export const Card = () => {
+import { Image } from '../components/ImageCard.styled';
+import { Title } from '../components/TitleCard.styled';
+import { Text } from '../components/TextCard.styled';
+import { Button } from '../components/ButtonCard.styled';
+
+type CardPropsType = {
+   src?: string;
+   title?: string;
+   text?: string;
+   textColor?: string;
+   textColor2?: string;
+   bgColor?: string;
+   hoverText?: string;
+   hover?: string;
+   border?: string;
+};
+
+export const Card = (props: CardPropsType) => {
    return (
-      <div>
-         <StyledCardWrapper>
-            <StyledCard>
-               <ImageCard src={imgCard} alt="foto" />
-               <TitleCard>Headline</TitleCard>
-               <TextCard>
-                  Faucibus. Faucibus. Sit sit sapien sit tempusrisu ut. Sit molestie ornare in
-                  venen.
-               </TextCard>
-               <BtnBox>
-                  <ButtonCard $textColor={'#fff'} $bgColor={'#4E71FE'} $hoverText={'#4E71FE'}>
-                     See more
-                  </ButtonCard>
-                  <ButtonCard $hover={'#4E71FE'} $textColor={'#4E71FE'}>
-                     Save
-                  </ButtonCard>
-               </BtnBox>
-            </StyledCard>
-         </StyledCardWrapper>
-      </div>
+      <StyledCard>
+         <Image src={props.src} />
+         <Title> {props.title}</Title>
+         <Text>{props.text}</Text>
+         <BtnBox>
+            <Button
+               $textColor={props.textColor}
+               $bgColor={props.bgColor}
+               $hoverText={props.hoverText}
+               $border={props.border}>
+               See more
+            </Button>
+            <Button $hover={props.hover} $textColor={props.textColor2} $border={props.border}>
+               Save
+            </Button>
+         </BtnBox>
+      </StyledCard>
    );
 };
 
@@ -35,7 +43,6 @@ const StyledCard = styled.div`
    padding: 10px 10px 10px 10px;
    background-color: #fff;
    max-width: 280px;
-   //height: 350px;
    box-shadow: 0px 4px 20px 5px #0000001a;
    border-radius: 15px;
 `;

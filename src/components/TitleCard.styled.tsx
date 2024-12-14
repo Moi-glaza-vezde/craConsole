@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-export const TitleCard = styled.h2`
+export const Title = styled.h2`
    padding: 20px 0px 20px 10px;
    font-size: 16px;
    font-weight: 700;

@@ -6,8 +6,9 @@ type ButtonCardPropsType = {
    $textColor?: string;
    $hover?: string;
    $hoverText?: string;
+   $border?: string;
 };
-export const ButtonCard = styled.button<ButtonCardPropsType>`
+export const Button = styled.button<ButtonCardPropsType>`
    width: 86px;
    height: 30px;
    background-color: ${(props) => props.$bgColor || '#ffff'};
@@ -18,7 +19,7 @@ export const ButtonCard = styled.button<ButtonCardPropsType>`
       background-color: ${(props) => props.$hover || '#ffff'};
       color: ${(props) => props.$hoverText || '#fff'};
    }
-   border: 2px solid #4e71fe;
+   border: 2px solid ${(props) => props.$border || '#4e71fe'};
    border-radius: 5px;
 
    font-size: 10px;
