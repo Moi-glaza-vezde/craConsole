@@ -6,9 +6,10 @@ import { Text } from '../components/TextCard.styled';
 import { Button } from '../components/ButtonCard.styled';
 
 type CardPropsType = {
-   src?: string;
+   src: string;
    title?: string;
    text?: string;
+
    textColor?: string;
    textColor2?: string;
    bgColor?: string;
@@ -49,6 +50,7 @@ const StyledCard = styled.div`
 
 const BtnBox = styled.div`
    padding: 19px 0 10px 10px;
+
    display: flex;
    gap: 12px;
 `;
