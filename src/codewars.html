@@ -7,12 +7,15 @@
    </head>
    <body>
       <script>
-         function removeVowels(str) {
-            const vowels = str.match(/[aeiou]/gi);
-            return vowels ? vowels.length : 0;
+         function highAndLow(numbers) {
+            const strArr = numbers.split(' ');
+            const numArray = strArr.map(Number);
+            const min = Math.min(...numArray).toString();
+            const max = Math.max(...numArray).toString();
+            const newString = [`${max} ${min}`].join(' ');
+            return newString;
          }
-
-         removeVowels('dole');
+         highAndLow('1 2 -3 4 5');
       </script>
    </body>
 </html>
