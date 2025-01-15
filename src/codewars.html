@@ -7,15 +7,18 @@
    </head>
    <body>
       <script>
-         function highAndLow(numbers) {
-            const strArr = numbers.split(' ');
-            const numArray = strArr.map(Number);
-            const min = Math.min(...numArray).toString();
-            const max = Math.max(...numArray).toString();
-            const newString = [`${max} ${min}`].join(' ');
-            return newString;
+         function descendingOrder(n) {
+            let number = n.toString().split('').map(Number);
+            const sortNumber = Number(number.sort((a, b) => b - a).join(''));
+
+            return sortNumber;
+            // number = number.split('');
+            // number = number.map(Number);
+            // const sorted = [...number].sort((a, b) => b - a);
+            console.log(sortNumber);
          }
-         highAndLow('1 2 -3 4 5');
+
+         descendingOrder(2314);
       </script>
    </body>
 </html>
