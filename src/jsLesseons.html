@@ -6,6 +6,25 @@
       <title>Document</title>
    </head>
    <body>
-      <script></script>
+      <script>
+         function itIncluds(array, value) {
+            for (const element of array) {
+               if (element === value) {
+                  return true;
+               }
+
+               return false;
+            }
+         }
+
+         function itIndexOf(array, value) {
+            for (let i = 0; i < array.length; i++) {
+               if (array[i] === value) {
+                  return i;
+               }
+            }
+            return -1;
+         }
+      </script>
    </body>
 </html>

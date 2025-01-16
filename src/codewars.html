@@ -7,18 +7,13 @@
    </head>
    <body>
       <script>
-         function descendingOrder(n) {
-            let number = n.toString().split('').map(Number);
-            const sortNumber = Number(number.sort((a, b) => b - a).join(''));
+         function filter_list(l) {
+            const filtered = l.filter((n) => typeof n === 'number');
 
-            return sortNumber;
-            // number = number.split('');
-            // number = number.map(Number);
-            // const sorted = [...number].sort((a, b) => b - a);
-            console.log(sortNumber);
+            return filtered;
          }
 
-         descendingOrder(2314);
+         filter_list([1, 2, 'a', 'b']);
       </script>
    </body>
 </html>
