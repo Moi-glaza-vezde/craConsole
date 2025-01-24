@@ -7,24 +7,26 @@
    </head>
    <body>
       <script>
-         function itIncluds(array, value) {
-            for (const element of array) {
-               if (element === value) {
-                  return true;
-               }
-
-               return false;
-            }
-         }
-
-         function itIndexOf(array, value) {
-            for (let i = 0; i < array.length; i++) {
-               if (array[i] === value) {
-                  return i;
-               }
-            }
-            return -1;
-         }
+         const todoLost = [
+            {
+               id: crypto.randomUUID(),
+               title: 'whot to lern',
+               tasks: [
+                  { id: crypto.randomUUID(), title: 'html' },
+                  { id: crypto.randomUUID(), title: 'css' },
+                  { id: crypto.randomUUID(), title: 'javsScript' },
+               ],
+            },
+            {
+               id: crypto.randomUUID(),
+               title: 'what to by',
+               tasks: [
+                  { id: crypto.randomUUID(), title: 'milk' },
+                  { id: crypto.randomUUID(), title: 'water' },
+                  { id: crypto.randomUUID(), title: 'meat' },
+               ],
+            },
+         ];
       </script>
    </body>
 </html>

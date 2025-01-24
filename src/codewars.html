@@ -7,9 +7,28 @@
    </head>
    <body>
       <script>
-         function accum(s) {}
+         function XO(str) {
+            const strLow = str.toLowerCase();
 
-         console.log(accum('abcde'));
+            if (strLow.includes('o') === false && strLow.includes('x') === false) {
+               return true;
+            }
+
+            const stringArr = strLow.split('');
+
+            const x = stringArr.filter((x) => x === 'x');
+            const o = stringArr.filter((o) => o === 'o');
+
+            if (x.length === o.length) {
+               return true;
+            } else {
+               return false;
+            }
+         }
+
+         const res = XO('zs');
+
+         console.log(res);
       </script>
    </body>
 </html>
