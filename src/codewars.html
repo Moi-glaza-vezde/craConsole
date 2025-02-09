@@ -7,30 +7,35 @@
    </head>
    <body>
       <script>
-         function XO(str) {
-            const strLow = str.toLowerCase();
-
-            if (strLow.includes('o') === false && strLow.includes('x') === false) {
-               return true;
-            }
-
-            const stringArr = strLow.split('');
-
-            const x = stringArr.filter((x) => x === 'x');
-            const o = stringArr.filter((o) => o === 'o');
-
-            if (x.length === o.length) {
-               return true;
+         function maskify(cc) {
+            if (cc.length <= 4) {
+               return cc;
             } else {
-               return false;
+               let newArr = cc.split('');
+               let last4 = newArr.slice(-4);
+               const circumcised = newArr.slice(0, -4);
+               const encoded = circumcised.map((s) => (s = '#'));
+               const concatenated = [...encoded, ...last4];
+               const string = concatenated.join('');
+
+               return string;
             }
          }
 
-         const res = XO('zs');
+         const res = maskify('123456789');
 
          console.log(res);
       </script>
    </body>
 </html>
 
-<!--  -->
+<!-- 
+
+           console.log(cc.length);
+            console.log(newArr);
+            console.log(last4);
+            console.log(circumcised);
+            console.log(encoded);
+            console.log(concatenated);
+            console.log(string)
+-->
