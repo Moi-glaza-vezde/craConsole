@@ -7,35 +7,35 @@
    </head>
    <body>
       <script>
-         function maskify(cc) {
-            if (cc.length <= 4) {
-               return cc;
+         function sumTwoSmallestNumbers(numbers) {
+            if (numbers.length < 4) {
+               return;
             } else {
-               let newArr = cc.split('');
-               let last4 = newArr.slice(-4);
-               const circumcised = newArr.slice(0, -4);
-               const encoded = circumcised.map((s) => (s = '#'));
-               const concatenated = [...encoded, ...last4];
-               const string = concatenated.join('');
+               const minNumber = Math.min(...numbers);
+               const number1 = numbers.find((n) => n === minNumber);
 
-               return string;
+               const index = numbers.indexOf(number1);
+
+               if (index !== -1) {
+                  numbers.splice(index, 1);
+               }
+
+               const minNumber2 = Math.min(...numbers);
+               const number2 = numbers.find((n) => n === minNumber2);
+
+               const summMinNumbers = number1 + number2;
+
+               console.log(number1);
+               console.log(index);
+               console.log(numbers);
+               console.log(number2);
+               console.log(summMinNumbers);
+               return summMinNumbers;
             }
          }
 
-         const res = maskify('123456789');
-
-         console.log(res);
+         //sumTwoSmallestNumbers([10, 25, 7, 6, 8, 3]);
+         sumTwoSmallestNumbers([88, 52, 52, 585, 778]);
       </script>
    </body>
 </html>
-
-<!-- 
-
-           console.log(cc.length);
-            console.log(newArr);
-            console.log(last4);
-            console.log(circumcised);
-            console.log(encoded);
-            console.log(concatenated);
-            console.log(string)
--->
